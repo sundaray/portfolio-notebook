@@ -6,7 +6,7 @@ const Posts = () => {
   return (
     <div>
       {isLoading ? (
-        <p>Loading...</p>
+        <p>Fetching...</p>
       ) : isError ? (
         <p>{error.message}</p>
       ) : (
