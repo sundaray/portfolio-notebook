@@ -5,7 +5,7 @@ const fetchAllPosts = asyncHandler(async (req, res) => {
   const posts = await Post.find();
 
   if (posts) {
-    res.json(tickets);
+    res.json(posts);
   } else {
     res.json([]);
   }

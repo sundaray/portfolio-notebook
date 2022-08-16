@@ -2,6 +2,7 @@ const express = require("express");
 const connectDB = require("./config/db");
 const dotenv = require("dotenv");
 const path = require("path");
+const cors = require("cors");
 const postRoutes = require("./routes/postRoutes");
 const globalErrorHandler = require("./middleware/errorMiddleware");
 
@@ -11,6 +12,7 @@ connectDB();
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
