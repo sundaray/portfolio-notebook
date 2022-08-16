@@ -1,12 +1,13 @@
 import React from "react";
 import { useFetchAllPosts } from "../hooks/postsHooks";
+import Spinner from "../sharedUi/Spinner";
 
 const Posts = () => {
   const { data: posts, error, isLoading, isError } = useFetchAllPosts();
   return (
     <div>
       {isLoading ? (
-        <p>Fetching...</p>
+        <Spinner />
       ) : isError ? (
         <p>{error.message}</p>
       ) : (
