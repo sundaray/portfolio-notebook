@@ -95,3 +95,7 @@ html {
     opacity: 0; 
   }
 }
+
+.pagination-bar {
+  border: .1rem solid red;
+}
