@@ -32,10 +32,10 @@ const Pagination = (props) => {
   let lastPage = paginationRange[paginationRange.length - 1];
 
   return (
-    <ul className="w-60 flex justify-between m-6">
+    <ul className="w-11/12 sm:w-3/5 md:w-4/12 m-auto my-12 flex justify-between items-center list-none">
       <li>
         <button
-          className="bg-gray-300 rounded px-1 py-0.5"
+          className="bg-gray-100 hover:bg-gray-300 border border-gray-300 rounded px-1 py-0.5"
           disabled={currentPage === 1}
           onClick={onPrevious}
         >
@@ -49,7 +49,9 @@ const Pagination = (props) => {
 
         return (
           <li
-            className="bg-zinc-400 w-6 h-6 rounded-full flex justify-center items-center"
+            className={`${
+              pageNumber === currentPage ? "bg-blue-500" : "border"
+            } w-6 h-6 rounded-full flex justify-center items-center cursor-pointer`}
             onClick={() => onPageChange(pageNumber)}
           >
             {pageNumber}
@@ -58,7 +60,7 @@ const Pagination = (props) => {
       })}
       <li onClick={onNext}>
         <button
-          className="bg-gray-300 rounded px-1 py-0.5"
+          className="bg-gray-100 border border-gray-300 rounded px-1 py-0.5 hover:bg-gray-300"
           disabled={currentPage === lastPage}
           onClick={onNext}
         >
